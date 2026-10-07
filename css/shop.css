@@ -1,0 +1,181 @@
+/*   SHOP PRODUCTS AREA */
+
+.shop-products {
+  width: 100%;
+  min-width: 0;
+}
+
+
+/*   BRAND SECTION*/
+
+.brand-section {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+
+/*    SECTION HEADER */
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+
+/*   SLIDER BUTTONS */
+
+.slider-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.slider-buttons button {
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+
+  transition: 0.2s ease;
+}
+
+.slider-buttons button:hover {
+  background: #08192B;
+  color: #fff;
+}
+
+
+/*   PRODUCT SLIDER*/
+
+.product-slider {
+  width: 100%;
+
+  display: flex;
+  gap: 20px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+
+  padding: 5px 2px 15px;
+}
+
+    .product-slider::-webkit-scrollbar {
+    display: none;
+    }
+
+
+/*   PRODUCT CARD */
+
+.product-card {
+  flex: 0 0 20%;
+  width: 260px;
+
+  background: #fff;
+
+  border: 1px solid #eee;
+  border-radius: 6px;
+
+  overflow: hidden;
+
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/*   PRODUCT IMAGE */
+
+.product-image {
+  width: 100%;
+  height: 200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f8f8f8;
+}
+
+.product-image img {
+  width: 60%;
+  height: 80%;
+  object-fit: cover;
+}
+
+
+/*   PRODUCT INFO*/
+
+.product-info {
+  padding: 18px;
+}
+
+.product-info p {
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.product-info span {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  font-size: 14px;
+}
+
+.product-info h3 {
+  margin: 0 0 15px;
+  font-size: 20px;
+}
+
+
+/*    VIEW PRODUCT BUTTON */
+
+.view-product {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background: #146FFA;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.view-product:hover {
+
+  background: #000;
+}
+
+
+.recent-section {
+    width: 100%;
+    margin-top: 50px;
+}
