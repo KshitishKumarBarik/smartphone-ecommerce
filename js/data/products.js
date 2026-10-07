@@ -196,110 +196,110 @@
         description:"S-series Product"
         
     },
-    // {
-    //     brand:"Oneplus",
-    //     logo:"./assets/images/nord-3.png",
-    //     products:[
-    //        {
-    //         varName :"Nord 3",
-    //         productId:"plus3",
-    //         image:"./assets/images/nord-3.png",
-    //         rating:4.6,
-    //         price:69000,
-    //         color:["navy-blur","rose-gold","pista-green"],
-    //         storage:["128gb","256gb","512gb"]
-    //        },
-    //        {
-    //         varName :"Nord 4",
-    //         productId:"plus4",
-    //         image:"",
-    //         rating:4.8,
-    //         price:79000,
-    //         color:["navy-blur","rose-gold","pista-green"],
-    //         storage:["128gb","256gb","512gb"]
-    //        },
-    //        {
-    //         varName :"Nord 5",
-    //         productId:"plus5",
-    //         image:"",
-    //         rating:4.6,
-    //         price:89000,
-    //         color:["navy-blur","rose-gold","pista-green"],
-    //         storage:["128gb","256gb","512gb"]
-    //        }
-    //     ],
-    //     description:"S-series Product"
+    {
+        brand:"Oneplus",
+        logo:"./assets/images/nord-3.png",
+        products:[
+           {
+            varName :"Nord 3",
+            productId:"plus3",
+            image:"./assets/images/nord-3.png",
+            rating:4.6,
+            price:69000,
+            color:["navy-blur","rose-gold","pista-green"],
+            storage:["128gb","256gb","512gb"]
+           },
+           {
+            varName :"Nord 4",
+            productId:"plus4",
+            image:"",
+            rating:4.8,
+            price:79000,
+            color:["navy-blur","rose-gold","pista-green"],
+            storage:["128gb","256gb","512gb"]
+           },
+           {
+            varName :"Nord 5",
+            productId:"plus5",
+            image:"",
+            rating:4.6,
+            price:89000,
+            color:["navy-blur","rose-gold","pista-green"],
+            storage:["128gb","256gb","512gb"]
+           }
+        ],
+        description:"S-series Product"
         
-    // },
-    // {
-    //     brand:"Xiaomi",
-    //     logo:"./image",
-    //     products:[
-    //        {
-    //         varName :"Note 3",
-    //         productId:"xin3",
-    //         image:"./assets/images/redmi-note3.png",
-    //         rating:4.6,
-    //         price:59000,
-    //         color:["navy-blur","rose-gold","pista-green"],
-    //         storage:["128gb","256gb","512gb"]
-    //        },
-    //        {
-    //         varName :"Note 4",
-    //         productId:"xin4",
-    //         image:"",
-    //         rating:4.3,
-    //         price:89000,
-    //         color:["navy-blur","rose-gold","pista-green"],
-    //         storage:["128gb","256gb","512gb"]
-    //        },
-    //        {
-    //         varName :"Note 5",
-    //         productId:"xin5",
-    //         image:"",
-    //         rating:4.4,
-    //         price:99000,
-    //         color:["navy-blur","rose-gold","pista-green"],
-    //         storage:["128gb","256gb","512gb"]
-    //        }
-    //     ],
-    //     description:"S-series Product"
+    },
+    {
+        brand:"Xiaomi",
+        logo:"./image",
+        products:[
+           {
+            varName :"Note 3",
+            productId:"xin3",
+            image:"./assets/images/redmi-note3.png",
+            rating:4.6,
+            price:59000,
+            color:["navy-blur","rose-gold","pista-green"],
+            storage:["128gb","256gb","512gb"]
+           },
+           {
+            varName :"Note 4",
+            productId:"xin4",
+            image:"",
+            rating:4.3,
+            price:89000,
+            color:["navy-blur","rose-gold","pista-green"],
+            storage:["128gb","256gb","512gb"]
+           },
+           {
+            varName :"Note 5",
+            productId:"xin5",
+            image:"",
+            rating:4.4,
+            price:99000,
+            color:["navy-blur","rose-gold","pista-green"],
+            storage:["128gb","256gb","512gb"]
+           }
+        ],
+        description:"S-series Product"
         
-    // },
-    // {
-    //     brand:"Realme",
-    //     logo:"./image",
-    //     products:[
-    //        {
-    //         varName :"Reamle 5",
-    //         productId:"rlm5",
-    //         image:"./assets/images/realme-5.png",
-    //         rating:4.6,
-    //         price:49000,
-    //         color:["navy-blur","rose-gold","pista-green"],
-    //         storage:["128gb","256gb","512gb"]
-    //        },
-    //        {
-    //         varName :"Reamle 6",
-    //         productId:"rlm6",
-    //         image:"",
-    //         rating:4.5,
-    //         price:79000,
-    //         color:["navy-blur","rose-gold","pista-green"],
-    //         storage:["128gb","256gb","512gb"]
-    //        },
-    //        {
-    //         varName :"Reamle 7",
-    //         productId:"rlm7",
-    //         image:"",
-    //         rating:4.8,
-    //         price:89000,
-    //         color:["navy-blur","rose-gold","pista-green"],
-    //         storage:["128gb","256gb","512gb"]
-    //        }
-    //     ],
-    //     description:"S-series Product"
-    // }
+    },
+    {
+        brand:"Realme",
+        logo:"./image",
+        products:[
+           {
+            varName :"Reamle 5",
+            productId:"rlm5",
+            image:"./assets/images/realme-5.png",
+            rating:4.6,
+            price:49000,
+            color:["navy-blur","rose-gold","pista-green"],
+            storage:["128gb","256gb","512gb"]
+           },
+           {
+            varName :"Reamle 6",
+            productId:"rlm6",
+            image:"",
+            rating:4.5,
+            price:79000,
+            color:["navy-blur","rose-gold","pista-green"],
+            storage:["128gb","256gb","512gb"]
+           },
+           {
+            varName :"Reamle 7",
+            productId:"rlm7",
+            image:"",
+            rating:4.8,
+            price:89000,
+            color:["navy-blur","rose-gold","pista-green"],
+            storage:["128gb","256gb","512gb"]
+           }
+        ],
+        description:"S-series Product"
+    }
 ]
 export const brandArray =[
     {

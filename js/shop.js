@@ -36,9 +36,7 @@ function createProductCard(product) {
                 >
                     View Product
                 </button>
-
             </div>
-
         </article>
     `;
 }
