@@ -9,10 +9,61 @@
 <body>
     
     <main class="shop-page">
-        <aside class="filters">
-            <div id="brandFilters"></div>
-            <div id="storageFilters"></div>
-        </aside>
+
+<aside class="filters">
+
+    <div class="filter-heading">
+        <h2>Filters</h2>
+        <button type="button" id="clearFilters">
+            Clear All
+        </button>
+    </div>
+
+    <!-- BRAND FILTER -->
+    <section class="filter-group">
+        <h3>Brand</h3>
+        <div id="brandFilters"></div>
+    </section>
+
+    <!-- STORAGE FILTER -->
+    <section class="filter-group">
+        <h3>Storage</h3>
+        <div id="storageFilters"></div>
+    </section>
+
+    <!-- PRICE FILTER -->
+    <section class="filter-group">
+        <h3>Price Range</h3>
+
+        <label for="minPrice">Minimum price (₹)</label>
+        <input
+            type="number"
+            id="minPrice"
+            placeholder="0"
+            min="0"
+        >
+
+        <label for="maxPrice">Maximum price (₹)</label>
+        <input
+            type="number"
+            id="maxPrice"
+            placeholder="150000"
+            min="0"
+        >
+    </section>
+
+    <!-- RATING FILTER -->
+    <section class="filter-group">
+        <h3>Customer Rating</h3>
+
+        <label class="filter-option">
+            <input type="checkbox" id="ratingFilter">
+            4 stars & above
+        </label>
+    </section>
+
+</aside>
+
         <section class="shop-products">
             <div class="brandSections " id="brandsliders">
 
