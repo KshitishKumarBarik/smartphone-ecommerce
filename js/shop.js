@@ -520,6 +520,8 @@ shopProducts.addEventListener("click", event => {
     renderRecentlyVisited();
 
     // Product-details navigation can be added here.
+    window.location.href =`../products/product-details.js?id=${encodeURIComponent(productId)}`;
+    console.log(productId);
 });
 
 // ==================================================

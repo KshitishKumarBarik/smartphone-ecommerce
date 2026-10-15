@@ -1,35 +1,64 @@
 
-/* ========================================
-   1. GLOBAL RESET & VARIABLES
-======================================== */
+/* =========================================
+   SMARTPHONE E-COMMERCE SHOP PAGE
+   Complete Responsive CSS
+========================================= */
 
-:root {
-    --primary: #2563eb;
-    --primary-dark: #1d4ed8;
-    --text: #1f2937;
-    --muted: #6b7280;
-    --border: #e5e7eb;
-    --background: #f8fafc;
-    --white: #ffffff;
-    --shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    --radius: 12px;
-}
+/* ---------- RESET ---------- */
 
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --primary: #146ffa;
+    --primary-dark: #0756d6;
+    --text: #171717;
+    --text-light: #666;
+    --border: #e5e7eb;
+    --background: #f8fafc;
+    --white: #ffffff;
+    --danger: #e53935;
+    --success: #16803d;
+    --radius: 12px;
+    --container-width: 1200px;
+    --container-padding: 20px;
+    --shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+html {
+    width: 100%;
+    min-width: 320px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    min-width: 320px;
+    min-height: 100vh;
     color: var(--text);
-    background: var(--background);
+    background: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
+    overflow-wrap: break-word;
+}
+
+img,
+svg,
+video {
+    display: block;
+    max-width: 100%;
 }
 
 button,
-input {
+input,
+select,
+textarea {
     font: inherit;
 }
 
@@ -43,519 +72,738 @@ input:focus-visible {
     outline-offset: 3px;
 }
 
-img {
-    display: block;
-    max-width: 100%;
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
 }
 
 button:disabled {
-    opacity: 0.4;
+    opacity: 0.5;
     cursor: not-allowed;
 }
 
-/* ========================================
-   2. MAIN PAGE LAYOUT
-======================================== */
+
+/* ---------- SHOP PAGE LAYOUT ---------- */
 
 .shop-page {
-    width: min(1440px, 100%);
-    margin: 0 auto;
-    padding: 28px 24px;
-    display: grid;
-    grid-template-columns: 250px minmax(0, 1fr);
-    gap: 28px;
-    align-items: start;
+    width: 100%;
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding: 32px var(--container-padding);
 }
 
-.shop-products {
+.shop-page *,
+.shop-page *::before,
+.shop-page *::after {
     min-width: 0;
+}
+
+.shop-page h1,
+.shop-page h2,
+.shop-page h3,
+.shop-page p {
+    overflow-wrap: anywhere;
+}
+
+.shop-page h1 {
+    margin-bottom: 24px;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    line-height: 1.2;
+}
+
+.shop-page h2 {
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    line-height: 1.3;
+}
+
+.shop-page input {
+    max-width: 100%;
+}
+
+
+/* ---------- FILTER SIDEBAR ---------- */
+
+.shop-page .filters {
     display: flex;
     flex-direction: column;
-    gap: 36px;
-}
-
-.brandSections {
-    min-width: 0;
-}
-
-/* ========================================
-   3. FILTER SIDEBAR
-======================================== */
-
-.filters {
+    gap: 24px;
+    width: 100%;
+    max-width: 280px;
+    padding: 20px;
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 22px 18px;
     box-shadow: var(--shadow);
     position: sticky;
-    top: 20px;
+    top: 0%;
 }
 
-.filter-heading {
+.shop-page .filter-heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    padding-bottom: 18px;
-    border-bottom: 1px solid var(--border);
 }
 
-.filter-heading h2 {
-    font-size: 21px;
+.shop-page .filter-heading h2 {
+    font-size: 1.25rem;
+}
+
+.shop-page #clearFilters {
+    padding: 7px 12px;
+    color: var(--primary);
+    background: transparent;
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.shop-page #clearFilters:hover {
+    color: var(--white);
+    background: var(--primary);
+}
+
+.shop-page .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.shop-page .filter-group h3,
+.shop-page .filters h3 {
+    font-size: 1rem;
     font-weight: 700;
 }
 
-#clearFilters {
-    border: none;
-    background: transparent;
-    color: var(--primary);
-    font-size: 13px;
-    font-weight: 600;
-}
-
-#clearFilters:hover {
-    color: var(--primary-dark);
-    text-decoration: underline;
-}
-
-.filter-group {
-    padding: 20px 0;
-    border-bottom: 1px solid var(--border);
-}
-
-.filter-group:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.filter-group h3 {
-    font-size: 15px;
-    margin-bottom: 14px;
-}
-
-/* Brand and storage options */
-
-#brandFilters,
-#storageFilters {
+.shop-page #brandFilters,
+.shop-page #storageFilters {
     display: flex;
     flex-direction: column;
-    gap: 11px;
+    gap: 10px;
 }
 
-.filter-option {
+.shop-page .filter-option {
     display: flex;
     align-items: center;
-    gap: 9px;
-    color: #4b5563;
-    font-size: 14px;
+    gap: 10px;
+    color: #333;
+    font-size: 0.95rem;
     cursor: pointer;
 }
 
-.filter-option:hover {
-    color: var(--primary);
-}
-
-.filter-option input[type="checkbox"],
-.filter-option input[type="radio"] {
+.shop-page .filter-option input {
+    width: 17px;
+    height: 17px;
+    flex: 0 0 17px;
     accent-color: var(--primary);
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
     cursor: pointer;
 }
 
-/* Supports dynamically generated labels and buttons */
-
-#brandFilters label,
-#storageFilters label {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    font-size: 14px;
-    cursor: pointer;
+.shop-page .price-filter {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
 }
 
-#brandFilters input,
-#storageFilters input {
-    accent-color: var(--primary);
-}
-
-/* Price inputs */
-
-.filter-group > label:not(.filter-option) {
-    display: block;
-    margin: 12px 0 6px;
-    font-size: 13px;
-    color: var(--muted);
-}
-
-.filter-group input[type="number"] {
+.shop-page #minPrice,
+.shop-page #maxPrice {
     width: 100%;
     min-width: 0;
-    padding: 10px 11px;
+    padding: 10px;
     border: 1px solid var(--border);
-    border-radius: 7px;
-    background: #fff;
-    color: var(--text);
+    border-radius: 6px;
+    background: var(--white);
 }
 
-.filter-group input[type="number"]:focus {
+.shop-page #minPrice:focus,
+.shop-page #maxPrice:focus {
     border-color: var(--primary);
-    outline: none;
 }
 
-/* ========================================
-   4. BRAND PRODUCT SECTIONS
-======================================== */
+.shop-page #ratingFilter {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--primary);
+}
 
-.brand-section {
+
+/* ---------- SHOP CONTENT ---------- */
+
+.shop-page .shop-products {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    width: 100%;
     min-width: 0;
+}
+
+.shop-page:has(.filters) {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    align-items: start;
+    gap: 28px;
+}
+
+.shop-page .shop-products > *,
+.shop-page #brandsliders,
+.shop-page .recent-section {
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* ---------- BRAND SECTIONS ---------- */
+
+.shop-page .brand-section,
+.shop-page .recent-section {
+    width: 100%;
+    min-width: 0;
+    padding: 22px;
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 20px;
-    margin-bottom: 26px;
     box-shadow: var(--shadow);
-    overflow: hidden;
 }
 
-.section-header {
+.shop-page .brand-section + .brand-section {
+    margin-top: 24px;
+}
+
+.shop-page .section-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 14px;
-    margin-bottom: 18px;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
 }
 
-.section-header h2 {
-    font-size: 22px;
-    line-height: 1.3;
+.shop-page .section-header h2 {
+    min-width: 0;
     font-weight: 700;
 }
 
-/* Slider navigation */
-
-.slider-buttons {
+.shop-page .slider-buttons {
     display: flex;
     align-items: center;
     gap: 8px;
     flex-shrink: 0;
 }
 
-.slider-buttons button,
-.brand-prev,
-.brand-next {
-    width: 36px;
-    height: 36px;
+.shop-page .brand-prev,
+.shop-page .brand-next,
+.shop-page #recentPrev,
+.shop-page #recentNext {
     display: inline-flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    color: var(--text);
+    background: var(--white);
     border: 1px solid var(--border);
     border-radius: 50%;
-    background: var(--white);
-    color: var(--text);
-    font-size: 18px;
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    font-size: 1.1rem;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
-.slider-buttons button:hover,
-.brand-prev:hover,
-.brand-next:hover {
+.shop-page .brand-prev:hover,
+.shop-page .brand-next:hover,
+.shop-page #recentPrev:hover,
+.shop-page #recentNext:hover {
+    color: var(--white);
     background: var(--primary);
     border-color: var(--primary);
-    color: var(--white);
 }
 
-/* ========================================
-   5. PRODUCT SLIDER
-======================================== */
 
-.product-slider {
+/* ---------- PRODUCT SLIDER ---------- */
+
+.shop-page .product-slider,
+.shop-page #recentProducts {
     display: flex;
-    gap: 18px;
+    align-items: stretch;
+    gap: 16px;
+    width: 100%;
+    min-width: 0;
     overflow-x: auto;
     overflow-y: hidden;
+    padding: 4px 2px 14px;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    padding: 3px 2px 12px;
-    min-width: 0;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
 }
 
-.product-slider::-webkit-scrollbar {
-    display: none;
+.shop-page .product-slider::-webkit-scrollbar,
+.shop-page #recentProducts::-webkit-scrollbar {
+    height: 6px;
 }
 
-/* Each product card */
+.shop-page .product-slider::-webkit-scrollbar-track,
+.shop-page #recentProducts::-webkit-scrollbar-track {
+    background: transparent;
+}
 
-.product-card {
-    flex: 0 0 210px;
-    min-width: 0;
+.shop-page .product-slider::-webkit-scrollbar-thumb,
+.shop-page #recentProducts::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+
+/* ---------- PRODUCT CARD ---------- */
+
+.shop-page .product-card {
     display: flex;
     flex-direction: column;
-    scroll-snap-align: start;
+    flex: 0 0 calc((100% - 48px) / 4);
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
+    scroll-snap-align: start;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.product-card:hover {
-    transform: translateY(-4px);
+.shop-page .product-card:hover {
+    transform: translateY(-3px);
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.09);
 }
 
-/* Product image */
-
-.product-card img {
+.shop-page .product-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 185px;
-    padding: 12px;
-    object-fit: contain;
+    height: 190px;
+    padding: 14px;
+    overflow: hidden;
     background: #f9fafb;
 }
 
-/* Product details */
+.shop-page .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
 
-.product-card h3,
-.product-card .product-name {
-    font-size: 15px;
+.shop-page .product-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px;
+}
+
+.shop-page .product-info > p {
+    display: -webkit-box;
+    width: 100%;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    font-size: 0.95rem;
     font-weight: 600;
     line-height: 1.4;
-    /* padding: 13px 13px 0; */
-    overflow-wrap: anywhere;
 }
 
-.product-info {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.shop-page .product-info > span {
+    color: #b77900;
+    font-size: 0.85rem;
 }
 
-.product-card .product-rating {
-    padding: 7px 13px 0;
-    color: #b7791f;
-    font-size: 13px;
-}
-
-.product-card .product-price {
-    padding: 7px 13px 12px;
-    color: #111827;
-    font-size: 19px;
+.shop-page .product-info h3 {
+    width: 100%;
+    font-size: 1.15rem;
     font-weight: 700;
+    line-height: 1.3;
 }
 
-/* View product button */
-
-.product-card .view-product {
-    /* margin: auto 13px 13px; */
+.shop-page .view-product {
+    width: 100%;
+    min-height: 40px;
+    margin-top: auto;
     padding: 10px 12px;
-    border: none;
-    border-radius: 7px;
-    background: var(--primary);
     color: var(--white);
-    font-size: 13px;
+    background: var(--text);
+    border: 1px solid var(--text);
+    border-radius: 6px;
+    font-size: 0.9rem;
     font-weight: 600;
-    transition: background 0.2s;
+    text-align: center;
+    transition: background 0.2s ease, border-color 0.2s ease;
 }
 
-.product-card .view-product:hover {
-    background: var(--primary-dark);
+.shop-page .view-product:hover {
+    background: var(--primary);
+    border-color: var(--primary);
 }
 
-/* ========================================
-   6. RECENTLY VISITED SECTION
-======================================== */
 
-.recent-section {
-    min-width: 0;
-    padding: 20px;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+/* ---------- RECENTLY VISITED ---------- */
+
+.shop-page .recent-section {
+    margin-top: 32px;
 }
 
-.recent-section .section-header {
+.shop-page .recent-section .section-header {
     margin-bottom: 18px;
 }
 
-#recentProducts {
-    min-height: 10px;
+.shop-page #recentProducts .product-card {
+    flex: 0 0 calc((100% - 48px) / 4);
 }
 
-/* Hide the section when JavaScript marks it empty */
 
-.recent-section.is-empty {
-    display: none;
-}
+/* ---------- EMPTY STATES ---------- */
 
-/* ========================================
-   7. EMPTY RESULTS MESSAGE
-======================================== */
-
-.no-products,
-.empty-state {
+.shop-page .no-products {
     width: 100%;
-    padding: 32px 16px;
-    color: var(--muted);
+    padding: 28px 16px;
+    color: var(--text-light);
+    background: var(--background);
+    border: 1px dashed var(--border);
+    border-radius: 8px;
     text-align: center;
-    font-size: 14px;
+    overflow-wrap: anywhere;
 }
 
-/* ========================================
-   8. TABLET RESPONSIVE
-======================================== */
 
-@media (max-width: 1000px) {
-    .shop-page {
+/* =========================================
+   LAPTOPS AND TABLETS
+========================================= */
+
+@media (max-width: 1024px) {
+    .shop-page:has(.filters) {
         grid-template-columns: 220px minmax(0, 1fr);
-        gap: 18px;
-        padding: 20px 16px;
+        gap: 20px;
     }
 
-    .filters {
-        padding: 18px 14px;
+    .shop-page {
+        padding: 28px 20px;
     }
 
-    .brand-section,
-    .recent-section {
+    .shop-page .filters {
         padding: 16px;
     }
 
-    .product-card {
-        flex-basis: 185px;
+    .shop-page .brand-section,
+    .shop-page .recent-section {
+        padding: 18px;
     }
 
-    .product-card img {
-        height: 165px;
-    }
-
-    .section-header h2 {
-        font-size: 20px;
-    }
-}
-
-/* ========================================
-   9. MOBILE RESPONSIVE
-======================================== */
-
-@media (max-width: 700px) {
-    .shop-page {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 14px 12px;
-    }
-
-    .filters {
-        position: static;
-        width: 100%;
-    }
-
-    .shop-products {
-        width: 100%;
-        gap: 24px;
-    }
-
-    .filter-heading h2 {
-        font-size: 19px;
-    }
-
-    .filter-group {
-        padding: 15px 0;
-    }
-
-    #brandFilters,
-    #storageFilters {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 12px 16px;
-    }
-
-    .brand-section,
-    .recent-section {
-        padding: 14px;
-        margin-bottom: 0;
-    }
-
-    .section-header {
-        gap: 8px;
-    }
-
-    .section-header h2 {
-        font-size: 18px;
-    }
-
-    .slider-buttons button {
-        width: 32px;
-        height: 32px;
-        font-size: 16px;
-    }
-
-    .product-slider {
+    .shop-page .product-slider,
+    .shop-page #recentProducts {
         gap: 12px;
     }
 
-    .product-card {
-        flex-basis: 155px;
+    .shop-page .product-card,
+    .shop-page #recentProducts .product-card {
+        flex-basis: calc((100% - 24px) / 3);
     }
 
-    .product-card img {
-        height: 145px;
+    .shop-page .product-image {
+        height: 165px;
     }
 
-    .product-card h3,
-    .product-card .product-name {
-        font-size: 13px;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .product-card .product-rating {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .product-card .product-price {
-        font-size: 17px;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .product-card .view-product {
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-bottom: 10px;
+    .shop-page .product-info {
+        padding: 12px;
     }
 }
 
-/* ========================================
-   10. SMALL MOBILE
-======================================== */
 
-@media (max-width: 380px) {
+/* =========================================
+   TABLETS AND SMALLER SCREENS
+========================================= */
+
+@media (max-width: 768px) {
+    .shop-page:has(.filters) {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+
     .shop-page {
-        padding: 10px 8px;
+        padding: 24px 16px;
     }
 
-    .brand-section,
-    .recent-section {
-        padding: 11px;
+    .shop-page .filters {
+        max-width: none;
+        gap: 18px;
     }
 
-    .product-card {
-        flex-basis: 140px;
+    .shop-page #brandFilters {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
     }
 
-    .product-card img {
-        height: 125px;
+    .shop-page #storageFilters {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 14px;
     }
 
-    .section-header h2 {
-        font-size: 16px;
+    .shop-page .filter-option {
+        font-size: 0.9rem;
+    }
+
+    .shop-page .brand-section,
+    .shop-page .recent-section {
+        padding: 16px;
+    }
+
+    .shop-page .section-header {
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .shop-page .brand-prev,
+    .shop-page .brand-next,
+    .shop-page #recentPrev,
+    .shop-page #recentNext {
+        width: 34px;
+        height: 34px;
+        flex-basis: 34px;
+    }
+
+    .shop-page .product-card,
+    .shop-page #recentProducts .product-card {
+        flex-basis: calc((100% - 12px) / 2);
+    }
+
+    .shop-page .product-image {
+        height: 175px;
+    }
+
+    .shop-page .product-info {
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .shop-page .product-info > p {
+        font-size: 0.9rem;
+    }
+
+    .shop-page .product-info h3 {
+        font-size: 1.05rem;
+    }
+}
+
+
+/* =========================================
+   MOBILE PHONES
+========================================= */
+
+@media (max-width: 480px) {
+    .shop-page {
+        padding: 18px 12px;
+    }
+
+    .shop-page h1 {
+        margin-bottom: 18px;
+        font-size: 1.6rem;
+    }
+
+    .shop-page .filters {
+        padding: 14px;
+        gap: 16px;
+    }
+
+    .shop-page .filter-heading {
+        flex-wrap: wrap;
+    }
+
+    .shop-page .filter-heading h2 {
+        font-size: 1.1rem;
+    }
+
+    .shop-page #brandFilters {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .shop-page .filter-option {
+        gap: 7px;
+        font-size: 0.85rem;
+    }
+
+    .shop-page #minPrice,
+    .shop-page #maxPrice {
+        padding: 9px 7px;
+        font-size: 0.85rem;
+    }
+
+    .shop-page .brand-section,
+    .shop-page .recent-section {
+        padding: 12px;
+        border-radius: 9px;
+    }
+
+    .shop-page .brand-section + .brand-section {
+        margin-top: 18px;
+    }
+
+    .shop-page .section-header {
+        align-items: center;
+        gap: 8px;
+    }
+
+    .shop-page .section-header h2 {
+        font-size: 1.05rem;
+    }
+
+    .shop-page .slider-buttons {
+        gap: 5px;
+    }
+
+    .shop-page .brand-prev,
+    .shop-page .brand-next,
+    .shop-page #recentPrev,
+    .shop-page #recentNext {
+        width: 30px;
+        height: 30px;
+        flex-basis: 30px;
+        font-size: 0.95rem;
+    }
+
+    .shop-page .product-slider,
+    .shop-page #recentProducts {
+        gap: 8px;
+        padding-bottom: 10px;
+    }
+
+    .shop-page .product-card,
+    .shop-page #recentProducts .product-card {
+        flex-basis: calc((100% - 8px) / 2);
+        border-radius: 8px;
+    }
+
+    .shop-page .product-image {
+        height: 135px;
+        padding: 8px;
+    }
+
+    .shop-page .product-info {
+        gap: 7px;
+        padding: 8px;
+    }
+
+    .shop-page .product-info > p {
+        font-size: 0.82rem;
+    }
+
+    .shop-page .product-info > span {
+        font-size: 0.76rem;
+    }
+
+    .shop-page .product-info h3 {
+        font-size: 0.95rem;
+    }
+
+    .shop-page .view-product {
+        min-height: 36px;
+        padding: 8px 5px;
+        font-size: 0.78rem;
+    }
+
+    .shop-page .recent-section {
+        margin-top: 22px;
+    }
+}
+
+
+/* =========================================
+   EXTRA-SMALL MOBILE PHONES
+========================================= */
+
+@media (max-width: 360px) {
+    .shop-page {
+        padding: 14px 8px;
+    }
+
+    .shop-page .filters {
+        padding: 12px;
+    }
+
+    .shop-page .brand-section,
+    .shop-page .recent-section {
+        padding: 9px;
+    }
+
+    .shop-page .section-header h2 {
+        font-size: 0.95rem;
+    }
+
+    .shop-page .slider-buttons {
+        gap: 4px;
+    }
+
+    .shop-page .brand-prev,
+    .shop-page .brand-next,
+    .shop-page #recentPrev,
+    .shop-page #recentNext {
+        width: 27px;
+        height: 27px;
+        flex-basis: 27px;
+        font-size: 0.85rem;
+    }
+
+    .shop-page .product-card,
+    .shop-page #recentProducts .product-card {
+        flex-basis: calc((100% - 8px) / 2);
+    }
+
+    .shop-page .product-image {
+        height: 115px;
+        padding: 6px;
+    }
+
+    .shop-page .product-info {
+        padding: 6px;
+    }
+
+    .shop-page .product-info > p {
+        font-size: 0.76rem;
+    }
+
+    .shop-page .product-info h3 {
+        font-size: 0.88rem;
+    }
+
+    .shop-page .view-product {
+        font-size: 0.72rem;
+        padding-inline: 3px;
+    }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .shop-page *,
+    .shop-page *::before,
+    .shop-page *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }

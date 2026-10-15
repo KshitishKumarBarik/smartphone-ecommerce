@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details page </title>
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../css/product-details.css">
+</head>
+<body>
+  <main class="product-container">
+      <!-- left image section 
+        -->
+      <section class="gallery-section">
+        <div class="main-image-card">
+
+          <!-- ---------- wishlist button ---------- -->
+          <button class="wishlist-btn" aria-lebel="Add to wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+
+          <!-- ----------------navigation buttons ----------------->
+           <button class="slider-arrow prev-arrow">
+            <i class="fa-solid fa-chevron-left"></i>
+           </button>
+           <button class="slider-arrow next-arrow">
+            <i class="fa-solid fa-chevron-right"></i>
+           </button>
+
+           <!-- main display image  -->
+            <img src="" alt="" id="mainProductImage" class="main-img">
+        </div>
+
+        <!-- Thumbnai product image  -->
+         <div class="thumbnails-row">
+
+            <div class="thumb-card active">
+              <img src="" alt="">
+            </div>
+            <div class="thumb-card">
+              <img src="" alt="">
+            </div>
+            <div class="thumb-card">
+              <img src="" alt="">
+            </div>
+            <div class="thumb-card">
+              <img src="" alt="">
+            </div>
+
+         </div>
+      </section>
+
+      <!-- right product details section -->
+       <section class="details-section">
+        <!-- product title  -->
+         <h1 class="product-title" id="productTitle">
+
+         </h1>
+
+         <!-- rating  -->
+          <div class="rating-row">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="rating-score">4.6</span>
+            <span class="review-count"></span>
+          </div>
+
+          <!-- -------------color swatches-------- -->
+          <div class="option-block">
+            <span class="option-label">Color</span>
+            <div class="swatches-list">
+              <button class="color-swatches"></button>
+              <button class="color-swatches"></button>
+              <button class="color-swatches"></button>
+              <button class="color-swatches"></button>
+              <button class="color-swatches"></button>
+            </div>
+          </div>
+
+          <!-- -------------------Storage Options------------------------->
+           <div class="option-block">
+            <span class="option-lebel">Storage </span>
+            <div class="storage-list">
+              <button class="storage-btn">128 GB </button>
+              <button class="storage-btn">256 GB</button>
+              <button class="storage-btn">512 GB</button>
+            </div>
+           </div>
+
+           <!-- ---------Price ------------------------  -->
+            <div class="price-container">
+              <i class="fa-solid fa-tag price-tag-icon"></i>
+              <span class="price-amount" id="productPrice"></span>
+              <span class="tax-info">(incl. of all taxes) </span>
+            </div>
+
+            <!-- -----------------Product Description---------------
+              -->
+            <p class="product-description" id="productDesc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis rerum distinctio libero at blanditiis
+            </p>
+            <a href="#" class="read-more">Read more...</a>
+
+
+            <!-- ---------------------------action Button --------------------------   -->
+             <div class="action-buttons">
+              <button class="btn btn-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+              <button class="btn btn-buy">Buy Now</button>
+             </div>
+
+       </section>
+
+  </main>
+  
+</body>
+</html>
